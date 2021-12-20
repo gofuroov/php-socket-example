@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test socket</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1"> Sms chat </span>
+</nav>
+<div class="container mt-4" id="app">
+    <div class="row">
+        <div class="col">
+            <div v-if="isAlive" class="alert alert-success text-center" role="alert">
+                Socket ulangan.
+            </div>
+            <div v-else class="alert alert-danger text-center" role="alert">
+                Socketda ulanishda muammo.
+            </div>
+        </div>
+    </div>
+    <div v-if="isAlive" class="row">
+        <div class="col">
+            <div class="input-group mb-3">
+                <input v-model="message" v-on:keyup.enter="sendMessage" type="text" class="form-control"
+                       placeholder="Xabar matni" aria-label="Xabar jo'natish">
+                <div class="input-group-append">
+                    <button @click="sendMessage" class="btn btn-outline-info" type="button">Jo'natish</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+            <div class="card">
+                <div class="card-body" style="max-height: 60vh; overflow: scroll">
+                    <ul class="list-group">
+                        <li v-for="(message, index) in messages"
+                            :key="index" class="list-group-item">
+                            {{message}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="./vue.js"></script>
+<script src="./main.js"></script>
+</html>

@@ -1,0 +1,19 @@
+{
+    "name": "olimjon/socket",
+    "description": "Ratchet php ni o'rganish uchun",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Olimjon\\Socket\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Olimjon",
+            "email": "Gofuroov@gmail.com"
+        }
+    ],
+    "require": {
+        "cboden/ratchet": "^0.4.4"
+    }
+}
